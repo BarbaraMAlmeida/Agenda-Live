@@ -1,0 +1,81 @@
+<mat-tab-group mat-align-tabs="start" style="padding: 40px 2%;">
+    <mat-tab label="Próximas">
+      <mat-progress-bar *ngIf="!nextLoading" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="nextLoading" fxLayout="row" fxLayoutAlign="start center"  style="padding: 2%; display: flex; flex-wrap: wrap;" >
+          <ng-container *ngFor="let live of livesNext" style="margin: 0.5%;">
+            <mat-card class="mat-card-live" 
+            fxFlex="0 1 calc(33.3% - 11px)"
+            fxFlex.lt-md="0 1 calc(50% - 11px)"
+            fxFlex.lt-sm="100%">
+
+                <mat-card-title class="mat-card-title-live">
+                  <div class="row">
+                    <p>
+                      <span style="font-size: 0.9rem;" fxFlex="70" fxLayoutAlign="start center">{{live.liveName}}</span>
+                      <span fxFlex="5"></span>
+                      <mat-chip class="met-chip-date" fxLayoutAlign="center center">
+                        <span style="font-size: 0.7rem;" fxFlex="25" fxLayoutAlign="end center">{{live.liveDate | localDateTime}}</span>
+                      </mat-chip>
+                    </p>
+
+                    <p style="font-size: 0.7rem;">
+                      Canal:<span>{{live.channelName}}</span>
+                    </p>
+                  </div>
+                </mat-card-title>
+                <mat-card-content fxLayoutAlign='center center'>
+                  <div>
+                    <iframe width="560" height="315" [src]="live.urlSafe" [frameBorder]="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope;picture-in-picture"
+                    allowfullscreen>
+
+
+                    </iframe>
+                  </div>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="Realizadas">
+      <mat-progress-bar *ngIf="!previousLoading" mode="indeterminate"></mat-progress-bar>
+      <div *ngIf="previousLoading"  fxLayout="row" fxLayoutAlign="start center" style="padding: 2%; display: flex; flex-wrap: wrap;" >
+        <ng-container *ngFor="let live of livesNext" style="margin: 0.5%;">
+          <mat-card class="mat-card-live" 
+          fxFlex="0 1 calc(33.3% - 11px)"
+          fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+
+              <mat-card-title class="mat-card-title-live">
+                <div class="row">
+                  <p>
+                    <span style="font-size: 0.9rem;" fxFlex="70" fxLayoutAlign="start center">{{live.liveName}}</span>
+                    <span fxFlex="5"></span>
+                    <mat-chip class="met-chip-date" fxLayoutAlign="center center">
+                      <span style="font-size: 0.7rem;" fxFlex="25" fxLayoutAlign="end center">{{live.liveDate | localDateTime}}</span>
+                    </mat-chip>
+                  </p>
+
+                  <p style="font-size: 0.7rem;">
+                    Canal:<span>{{live.channelName}}</span>
+                  </p>
+                </div>
+              </mat-card-title>
+              <mat-card-content fxLayoutAlign='center center'>
+                <div>
+                  <iframe width="560" height="315" [src]="live.urlSafe" [frameBorder]="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope;picture-in-picture"
+                  allowfullscreen>
+
+
+                  </iframe>
+                </div>
+              </mat-card-content>
+          </mat-card>
+      </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  
+
+  

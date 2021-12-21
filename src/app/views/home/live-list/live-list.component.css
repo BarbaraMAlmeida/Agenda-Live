@@ -1,0 +1,17 @@
+.mat-card-live{
+    border: 1px solid #CFB8DC;
+    border-radius: 4px 3px 6px/ 2px 4px;
+    padding:15px 0% 0% 0%;
+    margin: 5px;
+}
+
+.mat-card-title-live{
+    padding: 0px 10px 0px 15px;
+    min-height: 70px;
+    margin-bottom: 0px;
+}
+
+.met-chip-date{
+    background-color: #90CAF9 !important;
+    color: black !important;
+}

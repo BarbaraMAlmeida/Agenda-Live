@@ -1,0 +1,11 @@
+.example-icon {
+  padding: 0 14px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.tollbar{
+    height: 70px;
+    font-size: 1.5rem;
+}
